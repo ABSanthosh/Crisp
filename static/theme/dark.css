@@ -1,0 +1,13 @@
+[data-theme='dark'] {
+	--border: #343536;
+	--body: #1c1c1c;
+	--color: #ededed;
+	--codeBG: #232323;
+	--codeDisableBG: #3b3b3b;
+	--codeDisableColor: #949494;
+	--codeBorder: #505050;
+
+	--demoBG: #1c1c1c;
+	--demoBorder: 1px solid #585858;
+	--demoImageColor: #585858;
+}

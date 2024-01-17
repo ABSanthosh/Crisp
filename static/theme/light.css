@@ -1,5 +1,13 @@
-[data-theme="light"] {
-	--blur: blur(7px);
-	--blurBG: rgba(255, 255, 255, 0.85);
-	--blurDarkBG: rgba(245, 248, 250, 0.85)
+[data-theme='light'] {
+	--border: #e6e8eb;
+	--body: #ffffff;
+	--color: rgb(17, 24, 28);
+	--codeBG: #f5fbff;
+	--codeDisableBG: #f5f5f5;
+	--codeDisableColor: #868686;
+	--codeBorder: #d7e0ff;
+
+	--demoBG:  #fdfdfd;
+	--demoBorder: 1px solid #eaeaea;
+	--demoImageColor: #bfbfbf;
 }
