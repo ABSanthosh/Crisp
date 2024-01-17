@@ -1,0 +1,5 @@
+[data-theme="light"] {
+	--blur: blur(7px);
+	--blurBG: rgba(255, 255, 255, 0.85);
+	--blurDarkBG: rgba(245, 248, 250, 0.85)
+}
