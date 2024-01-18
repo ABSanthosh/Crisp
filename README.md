@@ -21,6 +21,28 @@ To get started with Crisp, you need scss(or if you prefer, convert the scss file
 yarn add sass
 ```
 
+And you need `_mixins.scss` for the utility classes to work incase you're not using css because these are used in the utility classes.
+
+```scss
+@mixin respondAt($breakpoint) {
+	@media (max-width: $breakpoint) {
+		@content;
+	}
+}
+
+@mixin box($width: 100%, $height: 100%) {
+	width: $width;
+	height: $height;
+}
+
+@mixin make-flex($dir: column, $align: center, $just: center) {
+	display: flex;
+	flex-direction: $dir;
+	align-items: $align;
+	justify-content: $just;
+}
+```
+
 ## Utility Classes
 
 | Type   | data attributes             | css variables                                   |
