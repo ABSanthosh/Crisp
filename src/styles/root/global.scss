@@ -9,7 +9,7 @@
 	box-sizing: border-box;
 	color: var(--color);
 
-	--__scrollbar-width: 10px;
+	--__scrollbar-width: 6px;
 
 	&::-webkit-scrollbar {
 		background: transparent;
@@ -38,7 +38,7 @@ body,
 	overflow-x: hidden;
 	overflow-y: auto;
 	scroll-behavior: smooth;
-	@include box(100vw, 100vh);
+	@include box(100vw, auto);
 	background-color: var(--body);
 	// font-family: 'Inter', sans-serif;
 	font-family:

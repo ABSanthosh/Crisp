@@ -19,16 +19,16 @@
 	</section>
 	<ButtonSection />
 	<ToggleSection />
-	<!-- <MenuSection /> -->
+	<MenuSection />
 </main>
 
 <style lang="scss">
 	.Home {
 		gap: 96px;
 		padding: 0 24px;
-		margin: 100px 0 400px 0;
 		max-width: 618px;
-		@include box($height: auto);
+		margin: 100px 0 200px 0;
+		@include box($height: unset);
 		@include make-flex($just: flex-start);
 
 		&__hero {

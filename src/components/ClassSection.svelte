@@ -115,7 +115,7 @@
 			--__active-bg: var(--codeBG);
 			--__active-border: var(--codeBorder);
 
-			@include box($height: 430px);
+			@include box($height: auto);
 			&--tabs {
 				@include make-flex($dir: row, $just: flex-start);
 
@@ -156,6 +156,8 @@
 				border-radius: 0 0 5px 5px;
 				@include box();
 				overflow-y: auto;
+			max-height: 430px;
+
 				padding: 16px 24px 80px 24px;
 				font-family: 'Space Mono', monospace;
 				font-size: 15px;
