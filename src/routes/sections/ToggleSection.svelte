@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import ClassSection from '$components/ClassSection.svelte';
 
 	import Highlight from 'svelte-highlight';

@@ -1,5 +1,6 @@
 <script>
 	import ButtonSection from './sections/ButtonSection.svelte';
+	import MenuSection from './sections/MenuSection.svelte';
 	import ToggleSection from './sections/ToggleSection.svelte';
 </script>
 
@@ -18,6 +19,7 @@
 	</section>
 	<ButtonSection />
 	<ToggleSection />
+	<!-- <MenuSection /> -->
 </main>
 
 <style lang="scss">
