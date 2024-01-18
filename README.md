@@ -1,4 +1,10 @@
-# Crisp
+<p align="center" width="100%">
+<br/>
+<br/>
+<img src="./static/Crisp.svg" alt="Crisp" width="60%" />
+<br/>
+<br/>
+</p>
 
 Crisp is a collection of SCSS utility classes designed to facilitate the implementation of lightweight and minimalistic HTML components. With a focus on simplicity and modularity, Crisp provides a set of utility classes that can be easily integrated into your projects.
 
