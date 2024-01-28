@@ -24,7 +24,7 @@
 		<div class="ClassSection__demo">
 			<slot name="demo" />
 		</div>
-		<div class="ClassSection__source">
+		<!-- <div class="ClassSection__source">
 			<div class="ClassSection__source--tabs">
 				{#each tabs as tab}
 					<button
@@ -51,7 +51,7 @@
           </code>
 				{/if}
       </pre>
-		</div>
+		</div> -->
 	</div>
 </section>
 
