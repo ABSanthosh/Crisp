@@ -1,10 +1,5 @@
 <script lang="ts">
 	import ClassSection from '$components/ClassSection.svelte';
-
-	import Highlight from 'svelte-highlight';
-	import scss from 'svelte-highlight/languages/scss';
-	import { xml } from 'svelte-highlight/languages';
-	import CodeSnippet from '$lib/Code';
 	import { clickOutside } from '$lib/ClickOutside';
 
 	/**
@@ -22,7 +17,7 @@
 	$: directionOpen = false;
 </script>
 
-<ClassSection name="Menu" neededTabs={['html', 'scss']}>
+<ClassSection name="Menu">
 	<svelte:fragment slot="demo">
 		<div class="Controls">
 			<details class="CrispMenu Demo" open>
@@ -142,12 +137,7 @@
 			</div>
 		</div>
 	</svelte:fragment>
-	<svelte:fragment slot="html">
-		<Highlight language={xml} code={CodeSnippet.menu.html} />
-	</svelte:fragment>
-	<svelte:fragment slot="scss">
-		<Highlight language={scss} code={CodeSnippet.menu.scss} />
-	</svelte:fragment>
+
 </ClassSection>
 
 <style lang="scss">

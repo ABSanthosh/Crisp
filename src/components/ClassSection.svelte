@@ -1,15 +1,9 @@
 <script lang="ts">
 	import Icon from '$lib/Icons';
 	import { ThemeStore as theme } from '$store/ThemeStore';
-	export let { name, neededTabs } = $$props as {
+	export let { name } = $$props as {
 		name: string;
-		neededTabs: Array<'html' | 'scss' | 'svelte'>;
 	};
-
-	$: tabs = ['html', 'scss', 'svelte'].filter((tab) =>
-		neededTabs.includes(tab as 'html' | 'scss' | 'svelte')
-	);
-	$: tabState = tabs[0] as (typeof tabs)[number];
 </script>
 
 <section class="ClassSection">
@@ -24,34 +18,6 @@
 		<div class="ClassSection__demo">
 			<slot name="demo" />
 		</div>
-		<!-- <div class="ClassSection__source">
-			<div class="ClassSection__source--tabs">
-				{#each tabs as tab}
-					<button
-						class="ClassSection__source--tab"
-						class:active={tabState === tab}
-						on:click={() => (tabState = tab)}
-					>
-						{tab}
-					</button>
-				{/each}
-			</div>
-			<pre>
-        {#if tabState === 'html'}
-					<code class="language-html">
-						<slot name="html" />
-					</code>
-				{:else if tabState === 'svelte'}
-					<code class="language-svelte">
-						<slot name="svelte" />
-          </code>
-				{:else if tabState === 'scss'}
-					<code class="language-scss">
-            <slot name="scss" />
-          </code>
-				{/if}
-      </pre>
-		</div> -->
 	</div>
 </section>
 
@@ -109,67 +75,6 @@
 			// 	background-image: radial-gradient(#585858 1px, transparent 0),
 			// 		radial-gradient(#585858 1px, transparent 0);
 			// }
-		}
-
-		&__source {
-			--__active-bg: var(--codeBG);
-			--__active-border: var(--codeBorder);
-
-			@include box($height: auto);
-			&--tabs {
-				@include make-flex($dir: row, $just: flex-start);
-
-				& > button {
-					@include box($height: auto);
-					border-radius: 0;
-					padding: 8px 16px;
-					outline: none;
-					cursor: pointer;
-					border: 1px solid transparent;
-
-					&.active {
-						background-color: var(--__active-bg);
-						border-top: 1px solid var(--__active-border);
-						border-left: 1px solid var(--__active-border);
-						border-right: 1px solid var(--__active-border);
-					}
-
-					&:not(.active) {
-						color: var(--codeDisableColor);
-						background-color: var(--codeDisableBG);
-						border-bottom: 1px solid var(--__active-border);
-					}
-
-					&:first-child {
-						border-radius: 5px 0 0 0;
-					}
-
-					&:last-child {
-						border-radius: 0 5px 0 0;
-					}
-				}
-			}
-
-			& > pre {
-				overflow: auto;
-				// max-height: 500px;
-				border-radius: 0 0 5px 5px;
-				@include box();
-				overflow-y: auto;
-			max-height: 430px;
-
-				padding: 16px 24px 80px 24px;
-				font-family: 'Space Mono', monospace;
-				font-size: 15px;
-				border: 1px solid var(--__active-border);
-				border-top: 0px solid transparent;
-				background-color: var(--__active-bg);
-
-				& > code {
-					@include box($height: auto);
-					@include make-flex($just: flex-start, $align: flex-start);
-				}
-			}
 		}
 	}
 </style>
