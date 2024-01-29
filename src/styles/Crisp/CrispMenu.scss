@@ -1,9 +1,27 @@
+/**
+ * @usage
+<details class="CrispMenu Demo">
+	<summary> Navigation </summary>
+	<ul class="CrispMenu__content Demo__content" data-align={align} data-direction={direction}>
+		<li class="CrispMenu__item">Home</li>
+		<li class="CrispMenu__item">About</li>
+		<li class="CrispMenu__item">Contact</li>
+	</ul>
+</details>
+*/
+
 .CrispMenu {
 	--crp-menu-width: auto;
 	--crp-menu-height: 32px;
 	--crp-menu-min-width: 150px;
 	--crp-menu-offset: 8px;
 	--crp-menu-icon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>');
+
+	--crp-menu-content-border-radius: 12px;
+	--crp-menu-content-border: 0.2px solid rgba(201, 201, 201, 0.4);
+	--crp-menu-content-padding: 5px;
+
+	--crp-menu-content-item-border-radius: 7px;
 
 	position: relative;
 	min-width: var(--crp-menu-min-width);
@@ -21,6 +39,8 @@
 
 		--crp-menu-box-shadow: #00000000 0px 0px 0px 0px, #00000000 0px 0px 0px 0px,
 			#0000000d 0px 1px 2px 0px;
+
+		--crp-menu-content-box-shadow: 0 0px 15px rgba(0, 0, 0, 0.1);
 	}
 
 	summary {
@@ -66,17 +86,21 @@
 	&__content {
 		gap: 5px;
 		z-index: 3;
-		padding: 8px;
 		list-style: none;
 		user-select: none;
 		position: absolute;
-		border-radius: 10px;
 		@include make-flex();
 		@include box(auto, auto);
 
+		// If its a list, remove list styles
+		list-style: none;
+
 		color: var(--crp-menu-color);
-		border: var(--crp-menu-border);
+		border: var(--crp-menu-content-border);
+		padding: var(--crp-menu-content-padding);
+		box-shadow: var(--crp-menu-content-box-shadow);
 		background-color: var(--crp-menu-background-color);
+		border-radius: var(--crp-menu-content-border-radius);
 
 		/** 
     * direction   align
@@ -164,6 +188,25 @@
 				bottom: 0;
 				left: calc(100% + var(--crp-menu-offset));
 			}
+		}
+	}
+
+	&__item {
+		@include box($height: 30px);
+		cursor: pointer;
+		user-select: none;
+		position: relative;
+		padding: 5px 10px;
+		@include make-flex($dir: row, $just: flex-start);
+
+		// Colors
+		color: var(--crp-menu-color);
+		background-color: var(--crp-menu-background-color);
+		border-radius: var(--crp-menu-content-item-border-radius);
+
+		&:hover {
+			color: var(--crp-menu-color-hover);
+			background-color: var(--crp-menu-background-color-hover);
 		}
 	}
 }

@@ -21,12 +21,14 @@
 	<svelte:fragment slot="demo">
 		<div class="Controls">
 			<details class="CrispMenu Demo" open>
-				<summary> Menu </summary>
-				<div class="CrispMenu__content Demo__content" data-align={align} data-direction={direction}>
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-				</div>
+				<summary> Navigation </summary>
+				<ul class="CrispMenu__content Demo__content" data-align={align} data-direction={direction}>
+					<li class="CrispMenu__item">Home</li>
+					<li class="CrispMenu__item">About</li>
+					<li class="CrispMenu__item">Contact</li>
+				</ul>
 			</details>
-			<div class="Controls__options">
+			<div class="Demo__content Controls__options">
 				<h4>Variations</h4>
 				<details
 					class="CrispMenu"
@@ -37,7 +39,7 @@
 					<summary>data-direction='{direction}'</summary>
 					<div class="CrispMenu__content">
 						<button
-							class="CrispButton"
+							class="CrispMenu__item Demo__content--item"
 							class:active={direction === 'top'}
 							on:click={() => {
 								direction = 'top';
@@ -47,7 +49,7 @@
 							top
 						</button>
 						<button
-							class="CrispButton"
+							class="CrispMenu__item Demo__content--item"
 							class:active={direction === 'bottom'}
 							on:click={() => {
 								direction = 'bottom';
@@ -57,7 +59,7 @@
 							bottom
 						</button>
 						<button
-							class="CrispButton"
+							class="CrispMenu__item Demo__content--item"
 							class:active={direction === 'left'}
 							on:click={() => {
 								direction = 'left';
@@ -67,7 +69,7 @@
 							left
 						</button>
 						<button
-							class="CrispButton"
+							class="CrispMenu__item Demo__content--item"
 							class:active={direction === 'right'}
 							on:click={() => {
 								direction = 'right';
@@ -88,7 +90,7 @@
 					<div class="CrispMenu__content">
 						{#if direction === 'top' || direction === 'bottom'}
 							<button
-								class="CrispButton"
+								class="CrispMenu__item Demo__content--item"
 								on:click={() => (align = 'left')}
 								class:active={align === 'left'}
 							>
@@ -96,14 +98,14 @@
 							</button>
 
 							<button
-								class="CrispButton"
+								class="CrispMenu__item Demo__content--item"
 								on:click={() => (align = 'center')}
 								class:active={align === 'center'}
 							>
 								center
 							</button>
 							<button
-								class="CrispButton"
+								class="CrispMenu__item Demo__content--item"
 								on:click={() => (align = 'right')}
 								class:active={align === 'right'}
 							>
@@ -111,21 +113,21 @@
 							</button>
 						{:else}
 							<button
-								class="CrispButton"
+								class="CrispMenu__item Demo__content--item"
 								on:click={() => (align = 'top')}
 								class:active={align === 'top'}
 							>
 								top
 							</button>
 							<button
-								class="CrispButton"
+								class="CrispMenu__item Demo__content--item"
 								on:click={() => (align = 'center')}
 								class:active={align === 'center'}
 							>
 								center
 							</button>
 							<button
-								class="CrispButton"
+								class="CrispMenu__item Demo__content--item"
 								on:click={() => (align = 'bottom')}
 								class:active={align === 'bottom'}
 							>
@@ -137,13 +139,22 @@
 			</div>
 		</div>
 	</svelte:fragment>
-
 </ClassSection>
 
 <style lang="scss">
 	.Demo {
 		&__content {
 			@include box(240px, auto);
+
+			&--item {
+				outline: none;
+				border: none;
+				
+				&.active {
+					color: #fff;
+					background-color: #4ebf59;
+				}
+			}
 		}
 	}
 	.Controls {
@@ -167,13 +178,9 @@
 			.CrispMenu__content {
 				@include box(100%, auto);
 			}
-			.CrispButton {
+			.CrispMenu__item {
 				--crp-button-width: 100%;
 
-				&.active {
-					--crp-button-color: #fff;
-					--crp-button-background-color: #4ebf59;
-				}
 			}
 		}
 	}
