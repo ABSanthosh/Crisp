@@ -1,12 +1,24 @@
-<script>
+<script lang="ts">
+	import { onMount } from 'svelte';
 	import ButtonSection from './sections/ButtonSection.svelte';
 	import MenuSection from './sections/MenuSection.svelte';
 	import ToggleSection from './sections/ToggleSection.svelte';
+
+	$: isSticky = false;
+	onMount(() => {
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 45) {
+				isSticky = true;
+			} else {
+				isSticky = false;
+			}
+		});
+	});
 </script>
 
 <main class="Home">
-	<section class="Home__hero">
-		<h1 class="Home__hero--title">Crisp</h1>
+	<section class="Home__hero" class:sticky={isSticky}>
+		<h1 class="Home__hero--title" class:sticky={isSticky}>Crisp</h1>
 		<p class="Home__hero--subtitle">A collection useful of SCSS utility classes</p>
 		<a
 			class="CrispButton"
@@ -36,6 +48,10 @@
 			@include box($height: auto);
 			@include make-flex($dir: column, $just: center, $align: center);
 
+			&.sticky {
+				margin-top: 90px;
+			}
+
 			&--title {
 				color: #4ebf59;
 				font-size: 150px;
@@ -43,6 +59,24 @@
 				text-align: center;
 				text-decoration: none;
 				font-family: 'Grape Nuts', cursive;
+
+				transition:
+				font-size 0.2s,
+				background-color 0.2s;
+				
+				&.sticky {
+					top: 0;
+					width: 100%;
+					transition:
+						font-size 0.2s,
+						background-color 0;
+					position: fixed;
+					background-color: var(--blurBG);
+					backdrop-filter: blur(15px) saturate(86%);
+					border-bottom: 1px solid var(--border);
+					font-size: 35px;
+					font-weight: 500;
+				}
 			}
 
 			&--subtitle {
