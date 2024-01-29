@@ -76,6 +76,7 @@
 					border-bottom: 1px solid var(--border);
 					font-size: 35px;
 					font-weight: 500;
+					z-index: 10;
 				}
 			}
 
