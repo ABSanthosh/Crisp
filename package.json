@@ -8,6 +8,7 @@
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"prod": "git checkout prod && git merge main && git push && git checkout main",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write ."
 	},

@@ -6,6 +6,8 @@
 <br/>
 </p>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/82b14d31-3e23-46c3-90a5-d8ca95932fe3/deploy-status)](https://app.netlify.com/sites/crisp-scss/deploys)
+
 Crisp is a collection of SCSS utility classes designed to facilitate the implementation of lightweight and minimalistic HTML components. With a focus on simplicity and modularity, Crisp provides a set of utility classes that can be easily integrated into your projects.
 
 ## Table of Contents
