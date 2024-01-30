@@ -28,8 +28,8 @@ Crisp is a collection of SCSS utility classes designed to facilitate the impleme
   - Use `data-icon` attribute selector, add icons as svg from [Lucid Icons](https://lucide.dev/icons/) or [Radix Icons](https://www.radix-ui.com/icons) and add them as background image.
 - [ ] Toggle -> Switch
   - Use design inspiration from [this(sizes and design)](https://www.radix-ui.com/themes/docs/components/switch)
-- [ ] Menu
-  - [ ] standard menu items style(from icloud)
+- [x] Menu
+  - [x] standard menu items style(from icloud)
 - [ ] [Checkbox](https://unruffled-hoover-de9320.netlify.app/?path=/story/data-input-checkbox--default) (icloud style too)
 - [ ] Input: Icloud style default, [variations, sizes, ](https://unruffled-hoover-de9320.netlify.app/?path=/story/data-input-input--error-state)
 - [ ] [Radio](https://unruffled-hoover-de9320.netlify.app/?path=/story/data-input-radio--default) (icloud style too)

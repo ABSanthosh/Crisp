@@ -3,6 +3,7 @@
 	import ButtonSection from './sections/ButtonSection.svelte';
 	import MenuSection from './sections/MenuSection.svelte';
 	import ToggleSection from './sections/ToggleSection.svelte';
+	import InputSection from './sections/InputSection.svelte';
 
 	$: isSticky = false;
 	onMount(() => {
@@ -32,6 +33,7 @@
 	<ButtonSection />
 	<ToggleSection />
 	<MenuSection />
+	<InputSection />
 </main>
 
 <style lang="scss">
